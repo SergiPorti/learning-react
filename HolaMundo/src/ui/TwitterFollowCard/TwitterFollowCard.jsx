@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import './TwitterFollowCardStyles.css'
 
-export function TwitterFollowCard({ children, username = 'Anonymous', name = 'Unknown' }) {
+export function TwitterFollowCard({ children, username = 'Anonymous', name = 'Unknown', initialIsFollowing }) {
 
-    const [isFollowing, setIsFollowing] = useState(false)
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
     const handleClick = () => {
         setIsFollowing(!isFollowing)
     }
-
 
     const text = isFollowing ? 'Siguiendo' : 'Seguir'
     const buttonClassName = isFollowing ? 'tw-followCard-button is-following' : 'tw-followCard-button'
@@ -25,7 +24,10 @@ export function TwitterFollowCard({ children, username = 'Anonymous', name = 'Un
             </header>
 
             <aside>
-                <button className={buttonClassName} onClick={handleClick}>{text}</button>
+                <button className={buttonClassName} onClick={handleClick}>
+                    <span className='tw-followCard-text'> {text}</span>
+                    <span className="tw-followCard-stopFollow">Dejar de seguir</span>
+                </button>
             </aside>
         </article>
     )
