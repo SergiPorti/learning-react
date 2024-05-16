@@ -61,16 +61,16 @@ body {
 .board .game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 25px;
 }
 
 .turn {
   display: flex;
-  justify-content: center;
-  margin: 15px auto;
+  gap: 15px;
+  margin: 35px auto;
   width: fit-content;
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .turn .square,
@@ -84,6 +84,7 @@ body {
 .square.is-selected {
   color: #fff;
   background: #09f;
+  box-shadow: 0 0 0;
 }
 
 .winner {
@@ -123,6 +124,7 @@ body {
   width: 100px;
   height: 100px;
   border: 2px solid #eee;
+  box-shadow: 0 0 15px rgba(250, 6, 250, 0.626);
   border-radius: 5px;
   display: grid;
   place-items: center;
